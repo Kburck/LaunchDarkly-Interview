@@ -1,0 +1,900 @@
+Last login: Tue Mar 25 00:11:05 on console
+kevinburck@macbookpro ~ % python --version
+
+zsh: command not found: python
+kevinburck@macbookpro ~ % python --version
+zsh: command not found: python
+kevinburck@macbookpro ~ % sh
+sh-3.2$ python --version
+sh: python: command not found
+sh-3.2$ python3 --version
+Python 3.13.2
+sh-3.2$ # Create a new directory for your project
+sh-3.2$ mkdir launchdarkly-interview
+sh-3.2$ cd launchdarkly-interview
+sh-3.2$ # Use Python's built-in venv module to create a virtual environment
+sh-3.2$ 
+sh-3.2$ # Use Python's built-in venv module to create a virtual environment
+sh-3.2$ python3 -m venv venv
+sh-3.2$ source venv/bin/activate
+(venv) sh-3.2$ (venv) yourcomputer:launchdarkly-interview yourusername$
+sh: syntax error near unexpected token `yourcomputer:launchdarkly-interview'
+(venv) sh-3.2$ 
+(venv) sh-3.2$ pip install launchdarkly-server-sdk
+Collecting launchdarkly-server-sdk
+  Downloading launchdarkly_server_sdk-9.10.0-py3-none-any.whl.metadata (6.4 kB)
+Collecting certifi>=2018.4.16 (from launchdarkly-server-sdk)
+  Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+Collecting expiringdict>=1.1.4 (from launchdarkly-server-sdk)
+  Downloading expiringdict-1.2.2-py3-none-any.whl.metadata (3.7 kB)
+Collecting launchdarkly-eventsource<2.0.0,>=1.1.0 (from launchdarkly-server-sdk)
+  Downloading launchdarkly_eventsource-1.2.2-py3-none-any.whl.metadata (5.1 kB)
+Collecting pyRFC3339>=1.0 (from launchdarkly-server-sdk)
+  Downloading pyRFC3339-2.0.1-py3-none-any.whl.metadata (2.1 kB)
+Collecting semver>=2.10.2 (from launchdarkly-server-sdk)
+  Downloading semver-3.0.4-py3-none-any.whl.metadata (6.8 kB)
+Collecting urllib3<3,>=1.26.0 (from launchdarkly-server-sdk)
+  Downloading urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
+Downloading launchdarkly_server_sdk-9.10.0-py3-none-any.whl (212 kB)
+Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+Downloading expiringdict-1.2.2-py3-none-any.whl (8.5 kB)
+Downloading launchdarkly_eventsource-1.2.2-py3-none-any.whl (29 kB)
+Downloading pyRFC3339-2.0.1-py3-none-any.whl (5.8 kB)
+Downloading semver-3.0.4-py3-none-any.whl (17 kB)
+Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+Installing collected packages: pyRFC3339, expiringdict, urllib3, semver, certifi, launchdarkly-eventsource, launchdarkly-server-sdk
+Successfully installed certifi-2025.1.31 expiringdict-1.2.2 launchdarkly-eventsource-1.2.2 launchdarkly-server-sdk-9.10.0 pyRFC3339-2.0.1 semver-3.0.4 urllib3-2.3.0
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+(venv) sh-3.2$ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.13/site-packages (24.3.1)
+Collecting pip
+  Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 10.5 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.3.1
+    Uninstalling pip-24.3.1:
+      Successfully uninstalled pip-24.3.1
+Successfully installed pip-25.0.1
+(venv) sh-3.2$ pip freeze > requirements.txt
+(venv) sh-3.2$ cat requirements.txt
+certifi==2025.1.31
+expiringdict==1.2.2
+launchdarkly-eventsource==1.2.2
+launchdarkly-server-sdk==9.10.0
+pyRFC3339==2.0.1
+semver==3.0.4
+urllib3==2.3.0
+(venv) sh-3.2$ touch feature_flag_demo.py
+(venv) sh-3.2$ import os
+sh: import: command not found
+(venv) sh-3.2$ import
+sh: import: command not found
+(venv) sh-3.2$ import os
+sh: import: command not found
+(venv) sh-3.2$ import os from ldclient import LDClient, Context
+sh: import: command not found
+(venv) sh-3.2$ import os
+sh: import: command not found
+(venv) sh-3.2$ import os
+sh: import: command not found
+(venv) sh-3.2$ import
+sh: import: command not found
+(venv) sh-3.2$ import
+sh: import: command not found
+(venv) sh-3.2$ export LAUNCHDARKLY_SDK_KEY='sdk-bf0a3eb1-d286-42fc-9d09-94e57cda104e'
+(venv) sh-3.2$ pip install launchdarkly-server-sdk
+Requirement already satisfied: launchdarkly-server-sdk in ./venv/lib/python3.13/site-packages (9.10.0)
+Requirement already satisfied: certifi>=2018.4.16 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2025.1.31)
+Requirement already satisfied: expiringdict>=1.1.4 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (1.2.2)
+Requirement already satisfied: launchdarkly-eventsource<2.0.0,>=1.1.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (1.2.2)
+Requirement already satisfied: pyRFC3339>=1.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2.0.1)
+Requirement already satisfied: semver>=2.10.2 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (3.0.4)
+Requirement already satisfied: urllib3<3,>=1.26.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2.3.0)
+(venv) sh-3.2$ python feature_flag_demo.py
+Error: 'str' object has no attribute '_validate'
+(venv) sh-3.2$ pip install launchdarkly-server-sdk --upgrade
+Requirement already satisfied: launchdarkly-server-sdk in ./venv/lib/python3.13/site-packages (9.10.0)
+Requirement already satisfied: certifi>=2018.4.16 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2025.1.31)
+Requirement already satisfied: expiringdict>=1.1.4 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (1.2.2)
+Requirement already satisfied: launchdarkly-eventsource<2.0.0,>=1.1.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (1.2.2)
+Requirement already satisfied: pyRFC3339>=1.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2.0.1)
+Requirement already satisfied: semver>=2.10.2 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (3.0.4)
+Requirement already satisfied: urllib3<3,>=1.26.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2.3.0)
+(venv) sh-3.2$ echo $LAUNCHDARKLY_SDK_KEY
+sdk-bf0a3eb1-d286-42fc-9d09-94e57cda104e
+(venv) sh-3.2$ python feature_flag_demo.py
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 1
+    {\rtf1\ansi\ansicpg1252\cocoartf2821
+      ^
+SyntaxError: unexpected character after line continuation character
+(venv) sh-3.2$ rm feature_flad.demo.py
+rm: feature_flad.demo.py: No such file or directory
+(venv) sh-3.2$ rm feature_flag.demo.py
+rm: feature_flag.demo.py: No such file or directory
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ 
+(venv) sh-3.2$ rm feature_flag_demo.py
+(venv) sh-3.2$ touch feature_flag_demo.py
+(venv) sh-3.2$ import os
+sh: import: command not found
+(venv) sh-3.2$ from ldclient import LDClient, Context
+sh: from: command not found
+(venv) sh-3.2$ 
+(venv) sh-3.2$ # Retrieve SDK key from environment variable
+(venv) sh-3.2$ SDK_KEY = os.getenv('LAUNCHDARKLY_SDK_KEY')
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$ 
+(venv) sh-3.2$ def setup_feature_flag():
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$     """
+>     Set up LaunchDarkly client and demonstrate feature flag usage
+>     """
+sh: 
+    Set up LaunchDarkly client and demonstrate feature flag usage
+    : command not found
+(venv) sh-3.2$     # Validate SDK Key
+(venv) sh-3.2$     if not SDK_KEY:
+>         raise ValueError("LaunchDarkly SDK Key is not set. Set LAUNCHDARKLY_SDK_KEY environment variable.")
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$     
+(venv) sh-3.2$     # Initialize LaunchDarkly client
+(venv) sh-3.2$     ldclient = LDClient(SDK_KEY)
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$ 
+(venv) sh-3.2$     # Create a user context - use a dictionary instead of builder method
+(venv) sh-3.2$     user_context = Context.create({
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$         'kind': 'user',
+sh: kind:: command not found
+(venv) sh-3.2$         'key': 'user-123',
+sh: key:: command not found
+(venv) sh-3.2$         'name': 'Test User'
+sh: name:: command not found
+(venv) sh-3.2$     })
+sh: syntax error near unexpected token `}'
+(venv) sh-3.2$ 
+(venv) sh-3.2$     # Check if feature flag is enabled
+(venv) sh-3.2$     show_new_feature = ldclient.variation(
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$         "new-dashboard-feature",  # Must match flag key in LaunchDarkly
+sh: new-dashboard-feature,: command not found
+(venv) sh-3.2$         user_context,             # User context
+sh: user_context,: command not found
+(venv) sh-3.2$         False                     # Default value if flag can't be evaluated
+(venv) sh-3.2$     )
+sh: syntax error near unexpected token `)'
+(venv) sh-3.2$ 
+(venv) sh-3.2$     # Demonstrate feature flag logic
+(venv) sh-3.2$     if show_new_feature:
+>         print("🟢 New feature is ENABLED!")
+>         return "New Feature Content"
+sh: syntax error near unexpected token `"🟢
+        return "New'
+(venv) sh-3.2$     else:
+sh: else:: command not found
+(venv) sh-3.2$         print("🔴 New feature is DISABLED")
+sh: syntax error near unexpected token `"🔴 New feature is DISABLED"'
+(venv) sh-3.2$         return "Original Feature Content"
+sh: return: Original Feature Content: numeric argument required
+sh: return: can only `return' from a function or sourced script
+(venv) sh-3.2$ 
+(venv) sh-3.2$ def main():
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$     try:
+sh: try:: command not found
+(venv) sh-3.2$         result = setup_feature_flag()
+sh: syntax error near unexpected token `('
+(venv) sh-3.2$         print(f"Feature result: {result}")
+sh: syntax error near unexpected token `f"Feature result: {result}"'
+(venv) sh-3.2$     except Exception as e:
+sh: except: command not found
+(venv) sh-3.2$         print(f"Error: {e}")
+sh: syntax error near unexpected token `f"Error: {e}"'
+(venv) sh-3.2$         import traceback
+sh: import: command not found
+(venv) sh-3.2$         traceback.print_exc()
+> 
+> if __name__ == "__main__":
+>     main()
+> 
+> source venv/bin/activate
+sh: syntax error near unexpected token `source'
+(venv) sh-3.2$ python feature_flag_demo.py
+Error: 'str' object has no attribute '_validate'
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 42, in main
+    result = setup_feature_flag()
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 16, in setup_feature_flag
+    ldclient = LDClient(SDK_KEY)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 191, in __init__
+    self._config._validate()
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute '_validate'
+(venv) sh-3.2$ echo $LAUNCHDARKLY_SDK_KEY
+sdk-bf0a3eb1-d286-42fc-9d09-94e57cda104e
+(venv) sh-3.2$ python feature_flag_demo.py
+Error: 'str' object has no attribute '_validate'
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 42, in main
+    result = setup_feature_flag()
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 16, in setup_feature_flag
+    ldclient = LDClient(SDK_KEY)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 191, in __init__
+    self._config._validate()
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute '_validate'
+(venv) sh-3.2$ pip install launchdarkly-server-sdk --upgrade
+Requirement already satisfied: launchdarkly-server-sdk in ./venv/lib/python3.13/site-packages (9.10.0)
+Requirement already satisfied: certifi>=2018.4.16 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2025.1.31)
+Requirement already satisfied: expiringdict>=1.1.4 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (1.2.2)
+Requirement already satisfied: launchdarkly-eventsource<2.0.0,>=1.1.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (1.2.2)
+Requirement already satisfied: pyRFC3339>=1.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2.0.1)
+Requirement already satisfied: semver>=2.10.2 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (3.0.4)
+Requirement already satisfied: urllib3<3,>=1.26.0 in ./venv/lib/python3.13/site-packages (from launchdarkly-server-sdk) (2.3.0)
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ export LAUNCHDARKLY_SDK_KEY=sdk-c19409a5-2c85-4514-b2e0-2445a0910b59
+(venv) sh-3.2$ echo $LAUNCHDARKLY_SDK_KEY
+sdk-c19409a5-2c85-4514-b2e0-2445a0910b59
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ python feature_flag_demo.py
+🔴 New feature is DISABLED
+Feature result: Original Feature Content
+Unhandled exception in event processor
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 308, in _run_main_loop
+    self._process_event(message.param)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 361, in _process_event
+    self._get_indexable_context(event, lambda c: self._outbox.add_event(IndexEvent(event.timestamp, c)))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/events/event_processor.py", line 380, in _get_indexable_context
+    already_seen = self._context_keys.put(context.fully_qualified_key, True)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/impl/lru_cache.py", line 22, in put
+    found = key in self.cache
+            ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+(venv) sh-3.2$ python feature_flag_demo.py
+Error: 'str' object has no attribute '_validate'
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 37, in main
+    result = setup_feature_flag()
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 13, in setup_feature_flag
+    ldclient = LDClient(SDK_KEY)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 191, in __init__
+    self._config._validate()
+    ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute '_validate'
+(venv) sh-3.2$ python feature_flag_demo.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 36, in main
+    check_feature()
+    ~~~~~~~~~~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 25, in check_feature
+    flag_enabled = ldclient.get().variation(FEATURE_FLAG_KEY, user, False)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 404, in variation
+    return self.__evaluate_with_hooks(key=key, context=context, default_value=default, method="variation", block=evaluate).evaluation_detail.value
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 632, in __evaluate_with_hooks
+    return block()
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 401, in evaluate
+    detail, _ = self._evaluate_internal(key, context, default, self._event_factory_default)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 472, in _evaluate_internal
+    if not context.valid:
+           ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'valid'
+(venv) sh-3.2$ python feature_flag_demo.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 36, in main
+    check_feature()
+    ~~~~~~~~~~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/feature_flag_demo.py", line 25, in check_feature
+    flag_enabled = ldclient.get().variation(FEATURE_FLAG_KEY, user, False)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 404, in variation
+    return self.__evaluate_with_hooks(key=key, context=context, default_value=default, method="variation", block=evaluate).evaluation_detail.value
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 632, in __evaluate_with_hooks
+    return block()
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 401, in evaluate
+    detail, _ = self._evaluate_internal(key, context, default, self._event_factory_default)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 472, in _evaluate_internal
+    if not context.valid:
+           ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'valid'
+(venv) sh-3.2$ 
+(venv) sh-3.2$ touch main.py
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 36, in main
+    check_feature()
+    ~~~~~~~~~~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 25, in check_feature
+    flag_enabled = ldclient.get().variation(FEATURE_FLAG_KEY, user, False)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 404, in variation
+    return self.__evaluate_with_hooks(key=key, context=context, default_value=default, method="variation", block=evaluate).evaluation_detail.value
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 632, in __evaluate_with_hooks
+    return block()
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 401, in evaluate
+    detail, _ = self._evaluate_internal(key, context, default, self._event_factory_default)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 472, in _evaluate_internal
+    if not context.valid:
+           ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'valid'
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 36, in main
+    check_feature()
+    ~~~~~~~~~~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 25, in check_feature
+    flag_enabled = ldclient.get().variation(FEATURE_FLAG_KEY, user, False)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 404, in variation
+    return self.__evaluate_with_hooks(key=key, context=context, default_value=default, method="variation", block=evaluate).evaluation_detail.value
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 632, in __evaluate_with_hooks
+    return block()
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 401, in evaluate
+    detail, _ = self._evaluate_internal(key, context, default, self._event_factory_default)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 472, in _evaluate_internal
+    if not context.valid:
+           ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'valid'
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 36, in main
+    check_feature()
+    ~~~~~~~~~~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 25, in check_feature
+    flag_enabled = ldclient.get().variation(FEATURE_FLAG_KEY, user, False)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 404, in variation
+    return self.__evaluate_with_hooks(key=key, context=context, default_value=default, method="variation", block=evaluate).evaluation_detail.value
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 632, in __evaluate_with_hooks
+    return block()
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 401, in evaluate
+    detail, _ = self._evaluate_internal(key, context, default, self._event_factory_default)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 472, in _evaluate_internal
+    if not context.valid:
+           ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'valid'
+(venv) sh-3.2$ python main.py
+Error posting diagnostic event (will retry): HTTPSConnectionPool(host='events.launchdarkly.com', port=443): Max retries exceeded with url: /diagnostic (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1019406e0>: Failed to resolve 'events.launchdarkly.com' ([Errno 8] nodename nor servname provided, or not known)"))
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 36, in main
+    check_feature()
+    ~~~~~~~~~~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 25, in check_feature
+    flag_enabled = ldclient.get().variation(FEATURE_FLAG_KEY, user, False)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 404, in variation
+    return self.__evaluate_with_hooks(key=key, context=context, default_value=default, method="variation", block=evaluate).evaluation_detail.value
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 632, in __evaluate_with_hooks
+    return block()
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 401, in evaluate
+    detail, _ = self._evaluate_internal(key, context, default, self._event_factory_default)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 472, in _evaluate_internal
+    if not context.valid:
+           ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'valid'
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 44, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 36, in main
+    check_feature()
+    ~~~~~~~~~~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 25, in check_feature
+    flag_enabled = ldclient.get().variation(FEATURE_FLAG_KEY, user, False)
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 404, in variation
+    return self.__evaluate_with_hooks(key=key, context=context, default_value=default, method="variation", block=evaluate).evaluation_detail.value
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 632, in __evaluate_with_hooks
+    return block()
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 401, in evaluate
+    detail, _ = self._evaluate_internal(key, context, default, self._event_factory_default)
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevinburck/launchdarkly-interview/venv/lib/python3.13/site-packages/ldclient/client.py", line 472, in _evaluate_internal
+    if not context.valid:
+           ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'valid'
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Traceback (most recent call last):
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 45, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 22, in main
+    user = Context.builder("example-user").build()
+           ^^^^^^^
+NameError: name 'Context' is not defined
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+^C
+Stopping...
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+Error posting 0 events (will retry): ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+Error posting 0 events (will retry): ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+^C
+Stopping...
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+❌ Feature is OFF: Hiding the new feature.
+^C
+Stopping...
+(venv) sh-3.2$ python main.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+🚀 Feature is ON: Showing the new feature!
+^C
+Stopping...
+(venv) sh-3.2$ python main.py
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 23
+    user = (
+            ^
+IndentationError: unindent does not match any outer indentation level
+(venv) sh-3.2$ python main.py
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 23
+    user = (Context.builder("example-user")
+                                           ^
+IndentationError: unindent does not match any outer indentation level
+(venv) sh-3.2$ python main.py
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 23
+    user = (
+            ^
+IndentationError: unindent does not match any outer indentation level
+(venv) sh-3.2$ python main.py
+  File "/Users/kevinburck/launchdarkly-interview/main.py", line 33
+    def check_feature():
+IndentationError: unexpected indent
+(venv) sh-3.2$ python main2.py
+Error posting diagnostic event (giving up permanently): HTTP error 401 (invalid SDK key)
+Received HTTP error 401 (invalid SDK key) for stream connection - giving up permanently
+Initialization timeout exceeded for LaunchDarkly Client or an error occurred. Feature Flags may not yet be available.
+LaunchDarkly client failed to initialize.
+(venv) sh-3.2$ python main2.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"admin"}
+Feature flag 'sample-feature' is ON
+^C
+Stopping...
+(venv) sh-3.2$ python main2.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+^C
+Stopping...
+(venv) sh-3.2$ python main2.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is OFF
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is OFF
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+^[[A^[[BChecking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"guest"}
+Feature flag 'sample-feature' is ON
+^C
+Stopping...
+(venv) sh-3.2$ python main2.py
+LaunchDarkly client initialized successfully!
+Listening for feature flag changes... Press Ctrl+C to stop.
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+Checking feature flag for user: {"key":"example-user","kind":"user","email":"user@example.com","role":"member"}
+Feature flag 'sample-feature' is ON
+^C
+Stopping...
+(venv) sh-3.2$ 
